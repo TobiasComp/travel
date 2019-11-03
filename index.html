@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Travelon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="travelon.css" />
+</head>
+<body>
+    <div class="app">
+        <div class="table-destinations">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Destination</th>
+                        <th>Price</th>
+                    </tr>
+                    <tbody></tbody>
+                </thead>
+            </table>
+
+        </div>
+        <div class="form-order">
+            <label for="new-order-name"> name:</label>
+            <input type="text" id="new-order-name"><br>
+            <label for="new-order-pid">id:</label>
+            <input type="text"id="new-order-pid"><br>
+            <label for="new-order-code">travel code</label>
+            <input type="text"id="new-order-code"><br>
+            <label for="new-order-num_passengers">num passengers: </label>
+            <input type="text"id="new-order-num_passengers">
+            <button onclick="addOrder()"></button>
+        </div>
+
+    </div>
+    <script src="travelon.js"></script>
+
+</body>
+</html>
