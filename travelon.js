@@ -88,7 +88,7 @@ function addOrder(){
 
 }
 
-function findOrder(x){
+function findOrder(){
     let searchName = document.querySelector('#find-order-name').value;
     let tableFind = document.querySelector('.find-order-table tbody');
     tableFind.innerHTML = "";
@@ -106,5 +106,28 @@ function findOrder(x){
         }
 
     });
+}
+
+function findOrderLookup(){
+    let selectedDestination = document.getElementById('order-lookup').value;
+    let tableFind = document.querySelector('.find-orders-destination tbody');
+    let totalCostDestination = 0;
+    tableFind.innerHTML = "";
+    let templateOrder = "<tr><td>#TOTAL</td><td>#PASSENGERS</td><td>#DESTINATION</td>" +
+                            "<td>#PID</td><td>#NAME</td><td>#ORDER-NUMBER</td></tr>";
+    orders.forEach( (order)=> {
+        if (order.destination==selectedDestination) {
+            tableFind.innerHTML += templateOrder
+            .replace("#TOTAL",order.total)
+            .replace("#PASSENGERS",order.passengers)
+            .replace("#DESTINATION",order.destination)
+            .replace("#PID",order.pid)
+            .replace("#NAME",order.name)
+            .replace("#ORDER-NUMBER",order.number)
+            totalCostDestination += order.total;
+        }
+    });
+    tableFind.innerHTML+="<tr><td>"+totalCostDestination+"</td></tr>";
+
 }
 
